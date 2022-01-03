@@ -1,4 +1,4 @@
-package ru.job4j;
+package ru.job4j.converter;
 
 public class Converter {
 
@@ -35,8 +35,8 @@ public class Converter {
     public static void main(String[] args) {
         float euro = Converter.rubleToEuro(140);
         System.out.println("140 rubles are " + euro + " euro.");
-        float dollar = Converter.rubleToDollar(140);
-        System.out.println("140 rubles are " + dollar + " dollar.");
+        float dollar = Converter.rubleToDollar(120);
+        System.out.println("120 rubles are " + dollar + " dollar.");
         float rubleEuro = Converter.euroToRuble(2);
         System.out.println("2 euro are " + rubleEuro + " rubles.");
         float rubleDollar = Converter.dollarToRuble(2);
@@ -50,25 +50,25 @@ public class Converter {
         float expected = 2;
         boolean passed = expected == Converter.rubleToEuro(in);
         System.out.println("140 rubles are 2 euro. Test result : " + passed);
-        float in1 = 140;
-        float expected1 = 2.3333333f;
-        boolean passed1 = expected1 == Converter.rubleToDollar(in1);
-        System.out.println("140 rubles are 2.3333333 dollar. Test result : " + passed1);
-        float in2 = 2;
-        float expected2 = 140;
-        boolean passed2 = expected2 == Converter.euroToRuble(in2);
-        System.out.println("2 euro are 140 rubles. Test result : " + passed2);
-        float in3 = 2;
-        float expected3 = 120;
-        boolean passed3 = expected3 == Converter.dollarToRuble(in3);
-        System.out.println("2 dollar are 120 rubles. Test result : " + passed3);
-        float in4 = 2;
-        float expected4 = 1.76f;
-        boolean passed4 = expected4 == Converter.dollarToEuro(in4);
-        System.out.println("2 dollar are 1.76 euro. Test result : " + passed4);
-        float in5 = 2;
-        float expected5 = 2.26f;
-        boolean passed5 = expected5 == Converter.euroToDollar(in5);
-        System.out.println("2 euro are 2.26 dollar. Test result : " + passed5);
+        in = 120;
+        passed = expected == Converter.rubleToDollar(in);
+        System.out.println("120 rubles are 2 dollar. Test result : " + passed);
+
+        in = 2;
+        expected = 140;
+        passed = expected == Converter.euroToRuble(in);
+        System.out.println("2 euro are 140 rubles. Test result : " + passed);
+
+        expected = 120;
+        passed = expected == Converter.dollarToRuble(in);
+        System.out.println("2 dollar are 120 rubles. Test result : " + passed);
+
+        expected = 1.76f;
+        passed = expected == Converter.dollarToEuro(in);
+        System.out.println("2 dollar are 1.76 euro. Test result : " + passed);
+
+        expected = 2.26f;
+        passed = expected == Converter.euroToDollar(in);
+        System.out.println("2 euro are 2.26 dollar. Test result : " + passed);
     }
 }
