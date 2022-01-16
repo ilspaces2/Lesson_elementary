@@ -102,4 +102,28 @@ public class MatrixCheckTest {
         boolean result = MatrixCheck.isWin(input);
         Assert.assertTrue(result);
     }
+
+    @Test
+    public void whenNotMonoHorizontal() {
+        char[][] input = {
+                {' ', ' ', ' '},
+                {' ', ' ', ' '},
+                {' ', ' ', ' '},
+        };
+        int row = 1;
+        boolean result = MatrixCheck.monoHorizontal(input, row);
+        Assert.assertFalse(result);
+    }
+
+    @Test
+    public void whenNotMonoVertical() {
+        char[][] input = {
+                {' ', ' ', ' '},
+                {' ', ' ', ' '},
+                {' ', ' ', ' '},
+        };
+        int column = 2;
+        boolean result = MatrixCheck.monoVertical(input, column);
+        Assert.assertFalse(result);
+    }
 }
