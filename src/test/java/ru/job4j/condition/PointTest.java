@@ -51,7 +51,7 @@ public class PointTest {
     }
 
     @Test
-    public void when456to789then3() {
+    public void when456to789then5dot19() {
         double expected = 5.19;
         Point a = new Point(4, 5, 6);
         Point b = new Point(7, 8, 9);
